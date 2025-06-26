@@ -15,7 +15,7 @@ def vol_tetraedro(a,b,c,aa,bb,cc):
     else :
         return "No se puede armar un tetraedro con esos valores."
 
-st.set_page_config(page_title="App con 6 números", layout="centered")
+st.set_page_config(page_title="Volumen de un tetraedro", layout="centered")
 
 st.title("Volumen tetraedro")
 
