@@ -21,11 +21,11 @@ st.title("Volumen tetraedro")
 a = st.number_input("Valor a", value=0.0)
 b = st.number_input("Valor b", value=0.0)
 c = st.number_input("Valor c", value=0.0)
-d = st.number_input("Valor a'", value=0.0)
-e = st.number_input("Valor b'", value=0.0)
-f = st.number_input("Valor c'", value=0.0)
+d = st.number_input("Valor a' (opuesto a a)", value=0.0)
+e = st.number_input("Valor b' (opuesto a b)", value=0.0)
+f = st.number_input("Valor c' (opuesto a c)", value=0.0)
 
 # Botón para calcular
 if st.button("Calcular"):
-    resultado = a + b + c + d + e + f  # Podés cambiar esto por otra función
+    resultado = vol_tetraedro(a,b,c,d,e,f)
     st.success(f"Resultado: {resultado}")
