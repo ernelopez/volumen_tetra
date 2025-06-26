@@ -8,10 +8,12 @@ def vol_tetraedro(a,b,c,aa,bb,cc):
                   [c**2, bb**2, aa**2, 0, 1],
                   [1, 1, 1, 1, 0]])
     D = np.linalg.det(M)
-    if D>=0 :
+    if D>0 :
         return np.sqrt(D/288)
+    elif D==0 :
+        return "El volumen es 0: quedó una figura plana."
     else :
-        return -1 
+        return "No se puede armar un tetraedro con esos valores."
 
 st.set_page_config(page_title="App con 6 números", layout="centered")
 
