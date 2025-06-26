@@ -1,0 +1,31 @@
+import streamlit as st
+import numpy as np
+
+def vol_tetraedro(a,b,c,aa,bb,cc):
+    M = np.array([[0, a**2, b**2, c**2, 1],
+                  [a**2, 0, cc**2, bb**2, 1],
+                  [b**2, cc**2, 0, aa**2, 1],
+                  [c**2, bb**2, aa**2, 0, 1],
+                  [1, 1, 1, 1, 0]])
+    D = np.linalg.det(M)
+    if D>=0 :
+        return np.sqrt(D/288)
+    else :
+        return -1 
+
+st.set_page_config(page_title="App con 6 números", layout="centered")
+
+st.title("Volumen tetraedro")
+
+# Inputs del usuario
+a = st.number_input("Valor a", value=0.0)
+b = st.number_input("Valor b", value=0.0)
+c = st.number_input("Valor c", value=0.0)
+d = st.number_input("Valor a'", value=0.0)
+e = st.number_input("Valor b'", value=0.0)
+f = st.number_input("Valor c'", value=0.0)
+
+# Botón para calcular
+if st.button("Calcular"):
+    resultado = a + b + c + d + e + f  # Podés cambiar esto por otra función
+    st.success(f"Resultado: {resultado}")
